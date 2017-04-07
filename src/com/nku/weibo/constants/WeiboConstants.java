@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nku.weibo;
+package com.nku.weibo.constants;
 
 /**
  * 该类定义了微博授权时所需要的参数。
@@ -22,10 +22,10 @@ package com.nku.weibo;
  * @author SINA
  * @since 2013-09-29
  */
-public interface Constants {
-
+public interface WeiboConstants {
+	
     /** 当前 DEMO 应用的 APP_KEY，第三方应用应该使用自己的 APP_KEY 替换该 APP_KEY */
-    public static final String APP_KEY      = "3675055120";
+    String APP_KEY      = "3675055120";
 
     /** 
      * 当前 DEMO 应用的回调页，第三方应用可以使用自己的回调页。

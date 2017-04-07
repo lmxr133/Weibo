@@ -1,0 +1,9 @@
+1.完成WeiboSDK导入到项目中，并完成授权。
+2.开始应用基本框架的搭建
+	1)页面UI基础部分的搭建
+	2)基本控件，常用工具类的创建(Toast,日志，常量)
+	3)第三方库的导入(GSON，处理图片的)
+具体步骤：在res/values文件夹下添加colors,dimens,styles(模板)
+	         在Manifest清单文件中加入用户权限和一些其他配置
+		src下创建BaseApplication(如第三方控件的初始化)	
+			 创建BaseActivity(继承自Activity，封装常用的方法和对象)

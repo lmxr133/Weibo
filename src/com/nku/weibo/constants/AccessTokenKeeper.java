@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.nku.weibo;
+package com.nku.weibo.constants;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,7 +34,6 @@ public class AccessTokenKeeper {
     private static final String KEY_UID           = "uid";
     private static final String KEY_ACCESS_TOKEN  = "access_token";
     private static final String KEY_EXPIRES_IN    = "expires_in";
-    private static final String KEY_REFRESH_TOKEN    = "refresh_token";
     
     /**
      * 保存 Token 对象到 SharedPreferences。
@@ -51,7 +50,6 @@ public class AccessTokenKeeper {
         Editor editor = pref.edit();
         editor.putString(KEY_UID, token.getUid());
         editor.putString(KEY_ACCESS_TOKEN, token.getToken());
-        editor.putString(KEY_REFRESH_TOKEN, token.getRefreshToken());
         editor.putLong(KEY_EXPIRES_IN, token.getExpiresTime());
         editor.commit();
     }
@@ -72,9 +70,7 @@ public class AccessTokenKeeper {
         SharedPreferences pref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_APPEND);
         token.setUid(pref.getString(KEY_UID, ""));
         token.setToken(pref.getString(KEY_ACCESS_TOKEN, ""));
-        token.setRefreshToken(pref.getString(KEY_REFRESH_TOKEN, ""));
         token.setExpiresTime(pref.getLong(KEY_EXPIRES_IN, 0));
-        
         return token;
     }
 
