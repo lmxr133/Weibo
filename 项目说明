@@ -7,3 +7,15 @@
 	         在Manifest清单文件中加入用户权限和一些其他配置
 		src下创建BaseApplication(如第三方控件的初始化)	
 			 创建BaseActivity(继承自Activity，封装常用的方法和对象)
+			在constants包下封装一些常量的类
+			在utils包下封装常用的工具类
+			最后在activity包下新建所需的Activity
+3.开始写页面
+	1)欢迎和登录页面的开发
+		首先写一个欢迎页面的布局文件
+		然后新建一个欢迎页的Activity,进入欢迎页，延迟一秒，判断是否授权，授权成功直接
+		进入主页面，否则进入登录页面
+		最后在清单文件不要忘了注册新建的Activity,并将其改为启动Activity
+		并注册主页面和登录页面的Activity
+	2)主页面的开发
+	3)封装标题栏
