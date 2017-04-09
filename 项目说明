@@ -18,4 +18,16 @@
 		最后在清单文件不要忘了注册新建的Activity,并将其改为启动Activity
 		并注册主页面和登录页面的Activity
 	2)主页面的开发
+		首先新建一个BaseFragment，其它所有的Fragment都继承于这个
+		然后在fragment包内新建主页面所需要的四个主要的Fragment并继承它，记得引入fragment布局
+		在values下新建四个fragment对应的布局文件
+		在fragment包下新建一个工具类FragmentController(单例)来处理Fragment的切换
+		继续回到MainActivity中处理activity的切换
+		重新更改activity_main的布局，主布局+分割线+四个按钮
+		在MainActivity中通过controller控制初始化显示，以及每一个按钮的监听显示。
+		坑：show和hide执行时，记得将开启的事务提交
 	3)封装标题栏
+备注：Fragment-碎片，用户页面的一小片，它依赖于Activity存在，所以当Activity销毁的时候，
+其中的所有Fragment也随之消失，它类似于布局中的一个个ViewGroup，但是优势在于它有自己的一套
+生命周期。使用方法：1，在布局中直接使用<Fragment>标签。2，在布局中先添加ViewGroup作为
+容器，再使用FragmentManager将Fragment放置上去进行管理。
